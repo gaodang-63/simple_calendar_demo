@@ -78,7 +78,6 @@ public class output_calendar {
     public static void print_month(Calendar cal) {
         System.out.println("Mon Tue Wed Thu Fri Sat Sun");
         int month_have_day = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-//        int month_have_week = cal.getActualMaximum(Calendar.WEEK_OF_MONTH);
         int day_of_week = cal.get(Calendar.DAY_OF_WEEK);
         /* 由于 Calendar.Sunday 是 1，而输出的一周的第一天是星期一 */
         day_of_week = --day_of_week == 0 ? 7 : day_of_week;
