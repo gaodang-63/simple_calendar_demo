@@ -31,9 +31,17 @@ public class output_calendar {
                 return;
             case 3:
                 day = Integer.parseInt(args[2]);
+                if (day <= 0 || day > 31) {
+                    System.out.println("day error:\t\033[31m" + args[2] + "\033[0m");
+                    return;
+                }
                 detail_level++;
             case 2:
                 month = Integer.parseInt(args[1]);
+                if (month <= 0 || month > 12) {
+                    System.out.println("month error:\t\033[31m" + args[1] + "\033[0m");
+                    return;
+                }
                 detail_level++;
             case 1:
                 year = Integer.parseInt(args[0]);
@@ -110,7 +118,7 @@ public class output_calendar {
         ret += "\033[1;32m" + String.format("%3d ", today) + "\033[0m";
         for (int i = day_of_week + 1; i <= 7; i++) {
             int day = today + (i - day_of_week);
-            if (today > month_days) {
+            if (day > month_days) {
                 ret = ret.concat("    ");
             } else {
                 ret = ret.concat(String.format("%3d ", day));
